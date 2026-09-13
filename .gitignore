@@ -1,0 +1,11 @@
+# LaTeX build artifacts (cv.pdf is tracked on purpose, so it's easy to grab without compiling)
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.nav
+*.snm
+*.vrb

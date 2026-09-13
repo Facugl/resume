@@ -1,0 +1,102 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Packages ---
+\usepackage[top=0.6in, bottom=0.55in, left=0.75in, right=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+% --- Fonts (single, clean, ATS-safe) ---
+\setmainfont{Georgia}[
+  UprightFont = *,
+  BoldFont = * Bold,
+  ItalicFont = * Italic
+]
+
+\definecolor{darkgray}{RGB}{60,60,60}
+\pagestyle{empty}
+
+% --- Section formatting: simple horizontal rule, no color blocks/icons ---
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\vspace{0.3em}\hrule\vspace{0.4em}]
+\titlespacing*{\section}{0pt}{0.55em}{0.35em}
+
+\newcommand{\entry}[3]{%
+  \noindent\textbf{#1} \hfill \textit{#2} \\
+  #3
+}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=2pt, topsep=3pt, parsep=0pt}
+
+\begin{document}
+\enlargethispage{2\baselineskip}
+
+% --- Header ---
+\begin{center}
+  {\LARGE \textbf{Facundo Luna}}\\[2pt]
+  {\large Backend Developer \textbar{} Java + Spring Boot \textbar{} REST APIs \textbar{} Microservices}\\[4pt]
+  \small
+  \href{mailto:facundolunaok@gmail.com}{facundolunaok@gmail.com} \textbar{}
+  \href{https://github.com/Facugl}{github.com/Facugl} \textbar{}
+  \href{https://linkedin.com/in/facundoluna}{linkedin.com/in/facundoluna} \\[2pt]
+  Santiago del Estero, Argentina \textbar{} Open to Remote Work \textbar{} English: Professional working proficiency
+\end{center}
+
+% --- Summary ---
+\section*{Professional Summary}
+Backend Developer with 1+ year of experience building REST APIs using Java and Spring Boot. Designed InventoryIQ, an inventory decision-support system using hexagonal architecture and Domain-Driven Design, and a banking system with 35+ endpoints, JWT/RBAC authentication, and ACID-compliant transactional architecture with an automated CI/CD pipeline. Seeking a remote backend role to contribute to scalable, reliable systems.
+
+% --- Skills ---
+\section*{Technical Skills}
+\noindent\textbf{Back-End:} Java 17, Spring Boot 3, Spring Data JPA, Spring Security, Hibernate, REST APIs \\
+\textbf{Databases:} MySQL, PostgreSQL \\
+\textbf{DevOps \& Cloud:} Docker, Docker Compose, GitHub Actions (CI/CD), Render \\
+\textbf{Front-End:} HTML, CSS, JavaScript, TypeScript, React, Tailwind CSS, Material-UI
+
+% --- Projects ---
+\section*{Projects}
+
+\entry{InventoryIQ}{Aug 2026 -- Present}{\href{https://github.com/Facugl/inventoryiq}{github.com/Facugl/inventoryiq}}
+\vspace{3pt}
+
+\noindent Inventory decision-support system converting sales and stock data into purchase recommendations, built with hexagonal architecture and Domain-Driven Design.
+\begin{itemize}
+  \item Modeled core business rules (reorder point, safety stock, ABC/XYZ classification) as a pure domain layer, isolated from Spring, Postgres, and CSV infrastructure.
+  \item Built a 9-screen React + TypeScript dashboard consuming a Spring Boot REST API documented with OpenAPI/Swagger.
+  \item Persisted recommendation history in PostgreSQL and deployed the full stack to Render + Neon.
+  \item \textit{Technologies:} Java 17, Spring Boot, PostgreSQL, React, TypeScript, Docker, MapStruct, TanStack Query.
+\end{itemize}
+
+\vspace{5pt}
+\entry{Banking System}{Dec 2024 -- Mar 2026}{\href{https://github.com/Facugl/banking_system}{github.com/Facugl/banking\_system}}
+\vspace{3pt}
+
+\noindent Backend system simulating financial operations using Java and Spring Boot.
+\begin{itemize}
+  \item Designed and implemented 35+ REST APIs for account management, financial transactions, and reporting.
+  \item Ensured ACID compliance using \texttt{@Transactional} for financial operations.
+  \item Implemented JWT authentication and Role-Based Access Control (RBAC) with Spring Security.
+  \item Built a CI/CD pipeline with GitHub Actions to containerize and deploy the application via Docker.
+  \item \textit{Technologies:} Java 17, Spring Boot, Spring Security, MySQL, Docker, GitHub Actions, JWT, Flyway.
+\end{itemize}
+
+% --- Experience ---
+\section*{Experience}
+\entry{Web Developer -- No Country Tech (Remote Collaboration)}{Mar 2023 -- Jul 2023}{Buenos Aires, Argentina}
+\vspace{1pt}
+\begin{itemize}
+  \item Delivered 2 production features in agile sprints for cross-functional teams.
+  \item Integrated React frontends with backend REST APIs (fetch, axios, error handling).
+  \item Built protected routes with JWT token management and role-based UI rendering.
+  \item Collaborated remotely using Slack, GitHub PRs, and Scrum.
+\end{itemize}
+
+% --- Education ---
+\section*{Education}
+\entry{Bachelor's Degree in Data Science (In Progress)}{2026 -- 2030}{Catholic University of Salta, Argentina}
+
+\vspace{4pt}
+\noindent\textbf{Certifications:} Spring Boot Microservices Architecture -- Udemy
+
+\end{document}
